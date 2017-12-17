@@ -7,8 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset = "utf-8"/>
 	<meta name = "Main" content = " cooking, recipee, baking, dinner, dessert, salads, food"/>
-	<meta name = "description" content = "Ta strona dotyczy gotowania, jest to blog kulinarny, zawiera przepisy."/>
-    <link rel="stylesheet" type="text/css" href="style_cookies.php" />
+	<meta name = "description" content = "Ta strona dotyczy gotowania, jest to blog kulinarny, zawiera przepisy."/> 
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet"/>
     <link rel = "stylesheet" type = "text/css" href = "CSS/style.css"/>
     <link rel = "stylesheet" type = "text/css" href = "CSS/style-index.css"/>
