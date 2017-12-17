@@ -1,0 +1,105 @@
+/* HEADER */
+header {
+    background-image: url('../../images/main_photo.jpg');
+    background-color: pink;
+    background-repeat: repeat;   
+    height: 200px;
+    width: 100%;
+    background-position: left;
+}
+
+header h1 {
+    border: 5px solid white ;
+    position: relative;
+    top: 10%;
+    width: 50%;
+    padding: 10px 10px;
+    margin: auto;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 5em;
+    text-align: center;
+    background-color: rgba(72, 75, 73, 0.7);
+}
+
+/* Menu */
+nav {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+    text-align: center;
+    width: 10em;
+    background-color: pink;
+    z-index: 3;
+}
+
+a { 
+    text-decoration: none; 
+}
+
+nav ul { 
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+nav li { 
+    background-color: white;
+    width: 10em;
+    height: 2em;
+    color: black; 
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.5);
+}
+
+nav li:hover { 
+    background-color: PowderBlue;
+}
+
+nav:hover >.first-level { 
+    display: block;
+}
+
+.first-level li:hover > .second-level {
+    display: inline;
+    position: absolute;
+    left: 10em;
+}
+
+.second-level li:hover > .third-level {
+    display: inline;
+    position: absolute;
+    left: 10em;
+}
+/* MENU END */
+
+.page-content {
+    position: relative;
+    top: 37px;
+    width: 70%;
+    padding: 10px 0 20px 0;
+    margin: auto;
+    left: 0px;
+    height: 1530px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    position: fixed;
+    left: -21px;
+    bottom: 47px;
+    margin-top: 0;
+    padding: 5px;
+    width: 100%;
+    z-index: 3;
+
+    background: #efabeb; /* Old Browsers */
+    background: -webkit-linear-gradient(top,#efabeb,#6f676e); /*Safari 5.1-6*/
+    background: -o-linear-gradient(top,#efabeb,#6f676e); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(top,#efabeb,#6f676e); /*Fx 3.6-15*/
+    background: #efabeb; /*Standard*/
+}
+

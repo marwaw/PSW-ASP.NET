@@ -1,0 +1,85 @@
+p:active, a:active{
+    background-color: yellow;
+}
+
+#main{
+	font-size: 30pt;
+	color: purple;
+	font-variant: small-caps;
+}
+
+#recipe_title{
+	font-size: 255%;
+	font-style: italic;
+	text-shadow: -3px 5px 5px dimgrey;
+}
+
+#welcome{
+	font-size: 26px;
+}
+
+#smacznego{
+	font-size: 2em;
+}
+
+.recipe {
+	color: brown;
+	font-size: 130%;
+	font-weight: bold;
+}
+
+
+:target {
+    border: 2px solid #D4D4D4;
+    background-color: pink;
+}
+
+ img
+         {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            -webkit-transition: -webkit-transform 3s; 
+            -moz-transition: -moz-transform 3s; 
+            -o-transition: -o-transform 3s; 
+            transition: transform 3s;
+         }
+         #img1:hover
+         {
+            -webkit-transform: rotate(360deg) scale(2, 2); 
+            -moz-transform: rotate(360deg) scale(2, 2);
+            -o-transform: rotate(360deg) scale(2, 2); 
+            transform: rotate(360deg) scale(1.2, 1.2);
+         }
+
+
+         #img2:hover
+         {
+         	-webkit-transform: translate(100px,0px);
+            -moz-transform: translate(100px,0px);
+            -o-transform: translate(100px,0px); 
+            transform: translate(100px,0px);
+         }
+
+
+         #img3:hover
+         {
+         	-webkit-transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+            -o-transform: skewX(30deg); 
+            transform: skewX(30deg);
+         }
+
+
+          #meltingimages 
+         {
+            position: relative;
+         }
+         #meltingimages img 
+         {
+            position: absolute;
+            margin-top: 20px;
+            -webkit-transition: opacity 3s ease;
+            transition: opacity 3s ease;
+         }
+         #meltingimages img.top:hover 
+            { opacity:0; }
