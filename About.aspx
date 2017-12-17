@@ -18,7 +18,7 @@
 
 	<nav> Menu
 		<ul class = "first-level">
-			<li><a href="index.php">Strona główna</a></li>
+			<li><a href="default.aspx">Strona główna</a></li>
 			<li>Kontakt
 				<ul class = "second-level">
 					<li><a href="kontakt.html">Napisz do nas</a></li>

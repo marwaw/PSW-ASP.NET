@@ -33,7 +33,7 @@
                 <li><a href="kontakt.html">Napisz do nas</a></li>
                 <li>Formularze
                     <ul class = "third-level">
-                        <li><a href="form.php">Feedback</a></li>
+                        <li><a href="form.aspx">Feedback</a></li>
                         <li><a href="form2.html">Formularz</a></li>
                     </ul>
                 </li>
@@ -77,10 +77,6 @@
                     <p><label>Ulica i nr domu:
           <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
 &nbsp; (np. Kwiatowa 8)</label></p>
-
-          <p><label>Nazwisko:
-          <asp:TextBox ID="TextBox2" runat="server" Width="318px"></asp:TextBox>
-&nbsp; (np. Kowalski)</label></p>
 
       <p><label for = "txtList"> Miesiąc urodzenia:
           <label>
