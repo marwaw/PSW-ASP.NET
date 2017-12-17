@@ -26,6 +26,7 @@
 			<li>Kontakt
 				<ul class = "second-level">
 					<li><a href="kontakt.html">Napisz do nas</a></li>
+					<li><a href="About.aspx">O nas</a></li>
 					<li>Formularze	
 						<ul class = "third-level">
                             <li><a href="form.aspx">Feedback</a></li>
