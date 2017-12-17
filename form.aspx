@@ -70,6 +70,18 @@
           <asp:TextBox ID="surnameTB" runat="server" Width="318px"></asp:TextBox>
 &nbsp; (np. Kowalski)</label></p>
 
+          <p><label>Kod pocztowy:
+          <asp:TextBox ID="PostalCodeTB" runat="server" Width="318px"></asp:TextBox>
+&nbsp; (np. 58-690)</label></p>
+
+                    <p><label>Ulica i nr domu:
+          <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
+&nbsp; (np. Kwiatowa 8)</label></p>
+
+          <p><label>Nazwisko:
+          <asp:TextBox ID="TextBox2" runat="server" Width="318px"></asp:TextBox>
+&nbsp; (np. Kowalski)</label></p>
+
       <p><label for = "txtList"> Miesiąc urodzenia:
           <label>
           <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
@@ -136,9 +148,9 @@
   </div>
 
 
-  <footer>
+ <!-- <footer>
     &copy;2017 Martyna i Ada
-  </footer>
+  </footer>-->
 
     </div>
 </body>
