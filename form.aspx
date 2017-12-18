@@ -55,7 +55,7 @@
         </ul>
     </nav>
   
-  <div class = "page-content" onmousemove="showCoords(event)">
+  <div class = "page-content" >
 	<h2>Formularz</h2>
 	<p>Wypełnienie tego formularza zajmie Ci tylko chwilę, a dzięki niemu będziemy mogły rozwijać tę stronę.</p>
   <p id = "help"> </p>
@@ -83,9 +83,14 @@
             <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. Kwiatowa 8)</label></p>
 
-      <p><label for = "txtList"> Miesiąc urodzenia:
+      <!--<p><label for = "txtList"> Miesiąc urodzenia:
           <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
+<<<<<<< HEAD
         &nbsp;(np. Maj)</label></p>
+=======
+        &nbsp;(np. Maj)
+      </label></p>-->
+>>>>>>> 8179829353232e66a27648bfba79d8a079336d34
 
 	    <p><label>Email:
             <asp:TextBox ID="emailTB" runat="server" Width="318px"></asp:TextBox>
@@ -101,21 +106,55 @@
           <asp:TextBox ID="phoneTB" runat="server" Width="318px"></asp:TextBox>
           (np. (111-111-111)
           </label></p>
+          <p>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                  ControlToValidate="phoneTB" Display="Dynamic" 
+                  ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
+          </p>
+
+           <p><asp:RegularExpressionValidator id="RegularExpressionValidator1" 
+                     ControlToValidate="phoneTB"
+                     ValidationExpression="\d{4}-\d{3}-\d{4}"
+                     Display="Dynamic"
+                     ErrorMessage="Telefon musi być w formacie 0000-000-0000"
+                     ForeColor="Red"
+                     runat="server"/></p>
 
 	    <p>
           <label>Wiek:&nbsp;
-            <asp:DropDownList ID="ageList" runat="server">
-                <asp:ListItem>0-18</asp:ListItem>
-                <asp:ListItem>18-24</asp:ListItem>
-                <asp:ListItem>25-35</asp:ListItem>
-                <asp:ListItem>35-55</asp:ListItem>
-                <asp:ListItem>55-80</asp:ListItem>
-                <asp:ListItem>&gt;81</asp:ListItem>
-            </asp:DropDownList>
+              <asp:TextBox ID="AgeTB" runat="server" Width="318px"></asp:TextBox>
+          (np. 21)
           </label>
         </p>
 
-        <p>Jak trafiłeś/aś na naszą stronę?</p>
+       <p><asp:RangeValidator id="RangeValidator1"
+           ControlToValidate="AgeTB"
+           MinimumValue="1"
+           MaximumValue="110"
+           Type="Integer"
+           Display="Dynamic"
+           Text="Wiek musi być z zakresu 1 do 110!"
+           ForeColor="Red"
+           runat="server"/>
+        </p> 
+          <p>
+          <asp:CompareValidator id="CompareValidator1" 
+                    ControlToValidate="AgeTB" 
+                    ValueToCompare="18"
+                    Type="Integer"
+                    Operator="GreaterThan"
+                    Display="Dynamic"
+                    Text="Jesteś jeszcze niepełoletni/a" 
+                    ForeColor="Red"
+                    runat="server"/>
+        </p>
+
+        <p>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                  ControlToValidate="AgeTB" Display="Dynamic" 
+                  ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
+          </p>
+      <!--  <p>Jak trafiłeś/aś na naszą stronę?</p>
           <p>
               <asp:RadioButtonList ID="howToSiteRB" runat="server">
                   <asp:ListItem Value="search-engine">Wyszukiwarka</asp:ListItem>
@@ -138,15 +177,26 @@
         <p><label>Dodatkowe uwagi:</label></p>
           <p>
               <textarea id="YourComments" name="S1" placeholder="Twój komentarz"></textarea><label><br>
-          &nbsp;</label></p>
+          &nbsp;</label></p>-->
 
 	    <p>
 	        <asp:Button ID="submitButton" runat="server" Text="Wyślij" />
             <asp:Button ID="resetButton" runat="server" Text="Wyczyść" />
+             <asp:button id="ButtonShow"
+       usesubmitbehavior="true"
+       text="Pokaż dane"
+       onclientclick="Navigate()"
+       runat="server" onclick="ButtonShow_Click" />
+
 &nbsp;
 	    </p>
+
+         <p>
+          <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
+
+       </p>
     </form>
-      <p><br/>
+      <br/>
   </div>
 
 
