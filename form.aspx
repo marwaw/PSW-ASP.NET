@@ -71,32 +71,31 @@
                 ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
 
-      <p><label>Nazwisko:
-          <asp:TextBox ID="surnameTB" runat="server" Width="318px"></asp:TextBox>
+        <p><label>Nazwisko:
+            <asp:TextBox ID="surnameTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. Kowalski)</label></p>
 
-          <p><label>Kod pocztowy:
-          <asp:TextBox ID="PostalCodeTB" runat="server" Width="318px"></asp:TextBox>
+        <p><label>Kod pocztowy:
+            <asp:TextBox ID="PostalCodeTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. 58-690)</label></p>
 
-                    <p><label>Ulica i nr domu:
-          <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
+        <p><label>Ulica i nr domu:
+            <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. Kwiatowa 8)</label></p>
 
       <p><label for = "txtList"> Miesiąc urodzenia:
           <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
-        &nbsp;(np. Maj)
-      </label></p>
+        &nbsp;(np. Maj)</label></p>
 
 	    <p><label>Email:
             <asp:TextBox ID="emailTB" runat="server" Width="318px"></asp:TextBox>
             (np. karol@domena.com)
          </label></p>
-          <p>
-              <asp:RequiredFieldValidator ID="emailRequiredFieldValidator" runat="server" 
-                  ControlToValidate="emailTB" Display="Dynamic" 
-                  ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
-          </p>
+        <p>
+            <asp:RequiredFieldValidator ID="emailRequiredFieldValidator" runat="server" 
+                ControlToValidate="emailTB" Display="Dynamic" 
+                ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
+        </p>
 
       <p><label>Tel:&nbsp;
           <asp:TextBox ID="phoneTB" runat="server" Width="318px"></asp:TextBox>
