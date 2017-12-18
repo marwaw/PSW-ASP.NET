@@ -83,10 +83,10 @@
           <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. Kwiatowa 8)</label></p>
 
-      <p><label for = "txtList"> Miesiąc urodzenia:
+      <!--<p><label for = "txtList"> Miesiąc urodzenia:
           <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
         &nbsp;(np. Maj)
-      </label></p>
+      </label></p>-->
 
 	    <p><label>Email:
             <asp:TextBox ID="emailTB" runat="server" Width="318px"></asp:TextBox>
@@ -144,7 +144,13 @@
                     ForeColor="Red"
                     runat="server"/>
         </p>
-        <p>Jak trafiłeś/aś na naszą stronę?</p>
+
+        <p>
+              <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                  ControlToValidate="AgeTB" Display="Dynamic" 
+                  ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
+          </p>
+      <!--  <p>Jak trafiłeś/aś na naszą stronę?</p>
           <p>
               <asp:RadioButtonList ID="howToSiteRB" runat="server">
                   <asp:ListItem Value="search-engine">Wyszukiwarka</asp:ListItem>
@@ -167,13 +173,17 @@
         <p><label>Dodatkowe uwagi:</label></p>
           <p>
               <textarea id="YourComments" name="S1" placeholder="Twój komentarz"></textarea><label><br>
-          &nbsp;</label></p>
+          &nbsp;</label></p>-->
 
 	    <p>
 	        <asp:Button ID="submitButton" runat="server" Text="Wyślij" />
             <asp:Button ID="resetButton" runat="server" Text="Wyczyść" />
 &nbsp;
 	    </p>
+
+         <p>
+          <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
+       </p>
     </form>
       <p><br/>
   </div>
