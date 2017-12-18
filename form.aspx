@@ -85,12 +85,7 @@
 
       <!--<p><label for = "txtList"> Miesiąc urodzenia:
           <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
-<<<<<<< HEAD
-        &nbsp;(np. Maj)</label></p>
-=======
-        &nbsp;(np. Maj)
-      </label></p>-->
->>>>>>> 8179829353232e66a27648bfba79d8a079336d34
+        &nbsp;(np. Maj)</label></p>-->
 
 	    <p><label>Email:
             <asp:TextBox ID="emailTB" runat="server" Width="318px"></asp:TextBox>
