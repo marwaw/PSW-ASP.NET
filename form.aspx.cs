@@ -44,8 +44,4 @@ public partial class form : System.Web.UI.Page
        Display();
 
     }
-    protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
-    {
-
-    }
 }

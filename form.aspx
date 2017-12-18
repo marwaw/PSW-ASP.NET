@@ -83,10 +83,6 @@
             <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. Kwiatowa 8)</label></p>
 
-      <!--<p><label for = "txtList"> Miesiąc urodzenia:
-          <asp:TextBox ID="birthMonthTB" runat="server" Width="318px"></asp:TextBox>
-        &nbsp;(np. Maj)</label></p>-->
-
 	    <p><label>Email:
             <asp:TextBox ID="emailTB" runat="server" Width="318px"></asp:TextBox>
             (np. karol@domena.com)
@@ -99,7 +95,7 @@
 
       <p><label>Tel:&nbsp;
           <asp:TextBox ID="phoneTB" runat="server" Width="318px"></asp:TextBox>
-          (np. (111-111-111)
+          (np.0000-000-0000 )
           </label></p>
           <p>
               <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
@@ -149,30 +145,6 @@
                   ControlToValidate="AgeTB" Display="Dynamic" 
                   ErrorMessage="Puste pole!" ForeColor="Red"></asp:RequiredFieldValidator>
           </p>
-      <!--  <p>Jak trafiłeś/aś na naszą stronę?</p>
-          <p>
-              <asp:RadioButtonList ID="howToSiteRB" runat="server">
-                  <asp:ListItem Value="search-engine">Wyszukiwarka</asp:ListItem>
-                  <asp:ListItem Value="friends">Z polecenia znajomych</asp:ListItem>
-                  <asp:ListItem Value="facebook">Facebook</asp:ListItem>
-                  <asp:ListItem Value="other">Inne</asp:ListItem>
-              </asp:RadioButtonList>
-        </p>
-          <p>Jakie przepisy interesowałyby Cię najbardziej?</p>
-          <p>
-              <asp:CheckBoxList ID="wantedCB" runat="server">
-                  <asp:ListItem Value="Dessert">Desery</asp:ListItem>
-                  <asp:ListItem Value="Lunch">Obiady</asp:ListItem>
-                  <asp:ListItem Value="Season">Sezonowe</asp:ListItem>
-                  <asp:ListItem Value="Breakfast">Śniadania</asp:ListItem>
-                  <asp:ListItem Value="Snack">Przekąski</asp:ListItem>
-              </asp:CheckBoxList>
-        </p>
-
-        <p><label>Dodatkowe uwagi:</label></p>
-          <p>
-              <textarea id="YourComments" name="S1" placeholder="Twój komentarz"></textarea><label><br>
-          &nbsp;</label></p>-->
 
 	    <p>
 	        <asp:Button ID="submitButton" runat="server" Text="Wyślij" />
