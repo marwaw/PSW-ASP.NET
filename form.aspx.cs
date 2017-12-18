@@ -34,13 +34,17 @@ public partial class form : System.Web.UI.Page
 
         outputLabel.Text = "Dziękujemy za przesłanie formularza!<br/>Przesłane informacje:<br/>";
         outputLabel.Text +=
-           String.Format("Imię: {0}{1} Nazwisko: {2}{1} E-mail: {3}{1} Telefon: {4}{1} Wiek: {5}{1} Kod pocztowy: {6}{1} Adres: {7}{1},  ",
+           String.Format("Imię: {0}{1} Nazwisko: {2}{1} E-mail: {3}{1} Telefon: {4}{1} Wiek: {5}{1} Kod pocztowy: {6}{1} Adres: {7}{1}  ",
           name, "<br/>", surname, email, phone, age, postalCode, address);
         outputLabel.Visible = true;
     }
 
+    public void ButtonShow_Click(object sender, EventArgs e)
+    {
+       Display();
 
-protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
+    }
+    protected void RadioButton1_CheckedChanged(object sender, EventArgs e)
     {
 
     }

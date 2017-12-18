@@ -178,14 +178,21 @@
 	    <p>
 	        <asp:Button ID="submitButton" runat="server" Text="Wyślij" />
             <asp:Button ID="resetButton" runat="server" Text="Wyczyść" />
+             <asp:button id="ButtonShow"
+       usesubmitbehavior="true"
+       text="Pokaż dane"
+       onclientclick="Navigate()"
+       runat="server" onclick="ButtonShow_Click" />
+
 &nbsp;
 	    </p>
 
          <p>
           <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
+
        </p>
     </form>
-      <p><br/>
+      <br/>
   </div>
 
 
