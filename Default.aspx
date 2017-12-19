@@ -104,8 +104,8 @@
 	</div>
         </div>
     </form>
-	<footer>
+	<!--<footer>
     &copy;2017 Martyna i Ada
-	</footer>
+	</footer>-->
         </body>
 </html>

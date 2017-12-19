@@ -19,8 +19,7 @@
         }
     </style>
 </head>
-<body>
-<div>   
+<body> 
     <header>
 <h1>PRZEPIŚNIK</h1>
 </header>
@@ -171,6 +170,5 @@
     &copy;2017 Martyna i Ada
   </footer>-->
 
-    </div>
 </body>
 </html>
