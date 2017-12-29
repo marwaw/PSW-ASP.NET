@@ -77,6 +77,15 @@
         <p><label>Kod pocztowy:
             <asp:TextBox ID="PostalCodeTB" runat="server" Width="318px"></asp:TextBox>
             &nbsp; (np. 58-690)</label></p>
+           <p><asp:RegularExpressionValidator id="RegularExpressionValidatorCode" 
+                     ControlToValidate="PostalCodeTB"
+                     ValidationExpression="\d{2}-\d{3}"
+                     Display="Dynamic"
+                     ErrorMessage="Kod musi być w formacie 00-000"
+                     ForeColor="Red"
+                     runat="server"/></p>
+
+	    <p>
 
         <p><label>Ulica i nr domu:
             <asp:TextBox ID="AddressTB" runat="server" Width="318px"></asp:TextBox>
@@ -156,11 +165,15 @@
 
 &nbsp;
 	    </p>
+          <p>
+<asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
 
+       </p>
          <p>
           <asp:Label ID="outputLabel" runat="server" Visible="False"></asp:Label>
 
        </p>
+                    
     </form>
       <br/>
   </div>
