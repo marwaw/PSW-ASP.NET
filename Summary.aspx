@@ -18,7 +18,25 @@
             </p>
 
             <p>
+                <asp:Label ID="delivery_label" runat ="server">Wybierz sposób dostawy</asp:Label>
+            </p>
+
+
+            <p><asp:RadioButtonList ID="delivery_list" runat="server"  AutoPostBack="True"> </asp:RadioButtonList></p>
+
+            <p>
+                <asp:Label ID="payment_label" runat ="server">Wybierz sposób płatności</asp:Label>
+            </p>
+
+
+            <p><asp:RadioButtonList ID="payment_list" runat="server"> </asp:RadioButtonList></p>
+
+            <p>
                 <asp:Label ID="price" runat ="server"></asp:Label>
+            </p>
+
+            <p>
+                <asp:Label ID="summary" runat ="server"></asp:Label>
             </p>
 
             <p><asp:HyperLink ID="link" runat="server" Text="Przejdź do produktów" NavigateUrl="Products.aspx"></asp:HyperLink></p>

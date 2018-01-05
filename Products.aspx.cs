@@ -63,9 +63,8 @@ public partial class Products : System.Web.UI.Page
                 others_list.Visible = true;
                 curent = others_list;
             }
-
-            
         }
+
         if (curent != null)
         {
             buy_button.Visible = true;
