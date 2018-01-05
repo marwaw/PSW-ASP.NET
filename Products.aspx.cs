@@ -20,15 +20,17 @@ public partial class Products : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        number_of_products.Text = "4";//tmp  
-                                      // number_of_products.Text = basket.Count.ToString();
-
-        //if (!IsPostBack)
-        //{
-            FillLists();
+        FillLists();
+        if (!IsPostBack)
+        {
+            Session["basket"] = new Hashtable();
             SetCategoriesList();
-        //}
-
+            SetProductsList(fruits, fruits_list);
+            SetProductsList(wegetables, wegetables_list);
+            SetProductsList(others, others_list);
+        }
+        basket = (Hashtable) Session["basket"];
+        number_of_products.Text = basket.Count.ToString();
 
         if (category_list.SelectedItem != null)
         {
@@ -70,7 +72,6 @@ public partial class Products : System.Web.UI.Page
 
     private void SetProductsList(Hashtable hashtable, CheckBoxList chb_list)
     {
-        List<string> list = new List<string>();
         foreach (DictionaryEntry pair in hashtable)
         {
             chb_list.Items.Add(pair.Key.ToString());
@@ -99,17 +100,17 @@ public partial class Products : System.Web.UI.Page
         fruits = new Hashtable();
         fruits.Add("banan", 2);
         fruits.Add("kiwi", 5);
-        SetProductsList(fruits, fruits_list);
+        
 
         wegetables = new Hashtable();
         wegetables.Add("burak", 4);
         wegetables.Add("por", 5);
-        SetProductsList(wegetables, wegetables_list);
+        
 
         others = new Hashtable();
         others.Add("wałek", 12);
         others.Add("foremki", 20);
-        SetProductsList(others, others_list);
+        
 
         selected = new Hashtable();
     }
@@ -136,7 +137,8 @@ public partial class Products : System.Web.UI.Page
                     price = (int)others[item.Value];
                 }
 
-                Session[item.Value] = price;
+                basket[item.Value] = price;
+                number_of_products.Text = basket.Count.ToString();
             }
         }
 

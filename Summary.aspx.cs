@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,8 @@ public partial class Summary : System.Web.UI.Page
     {
         if (Session.Count != 0)
         {
-            foreach (string keyName in Session.Keys)
-                selected.Items.Add(keyName + " " + Session[keyName]);
+            foreach (string keyName in ((Hashtable)Session["basket"]).Keys)
+                selected.Items.Add(keyName + " " + ((Hashtable)Session["basket"])[keyName]);
         }
 
     }
