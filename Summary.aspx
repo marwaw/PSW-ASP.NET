@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <p>
+                <asp:ListBox ID="selected" runat="server" ></asp:ListBox>
+            </p>
         </div>
     </form>
 </body>

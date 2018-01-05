@@ -18,7 +18,7 @@
             <p><asp:HyperLink ID="link" runat="server" Text="Przejdź do podsumowania" NavigateUrl="Summary.aspx"></asp:HyperLink></p>
 
             <p>
-                <asp:CheckBoxList ID="fruits_list" runat="server" ></asp:CheckBoxList>
+                <asp:CheckBoxList ID="fruits_list" runat="server" ></asp:CheckBoxList>    
             </p>
 
             <p>

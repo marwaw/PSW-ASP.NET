@@ -9,6 +9,11 @@ public partial class Summary : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session.Count != 0)
+        {
+            foreach (string keyName in Session.Keys)
+                selected.Items.Add(keyName + " " + Session[keyName]);
+        }
 
     }
 }

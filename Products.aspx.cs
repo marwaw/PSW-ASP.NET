@@ -23,12 +23,10 @@ public partial class Products : System.Web.UI.Page
         number_of_products.Text = "4";//tmp  
                                       // number_of_products.Text = basket.Count.ToString();
 
-
         if (!IsPostBack)
         {
             FillLists();
             SetCategoriesList();
-
         }
 
 
@@ -58,11 +56,7 @@ public partial class Products : System.Web.UI.Page
                 others_list.Visible = true;
                 curent = others_list;
             }
-
-
         }
-
-
     }
 
     private void SetCategoriesList()
@@ -79,11 +73,21 @@ public partial class Products : System.Web.UI.Page
         List<string> list = new List<string>();
         foreach (DictionaryEntry pair in hashtable)
         {
-            list.Add(pair.Key.ToString() + " " + pair.Value.ToString());
+            chb_list.Items.Add(pair.Key.ToString());
+            
+            //list.Add(pair.Key.ToString() + " " + pair.Value.ToString());
         }
-        chb_list.DataSource = hashtable.Keys;
-        chb_list.DataBind();
+
+        //chb_list.DataSource = hashtable;
+        //chb_list.DataBind();
         chb_list.Visible = false;
+
+        foreach (ListItem item in chb_list.Items)
+        {
+            String name = item.Value;
+            item.Text = name + " " + hashtable[name];
+            item.Value = name;
+        }
     }
 
     private void FillLists()
@@ -113,13 +117,14 @@ public partial class Products : System.Web.UI.Page
 
     protected void Buy_button_Click(object sender, EventArgs e)
     {
-
         foreach (ListItem item in curent.Items)
+        {
             if (item.Selected)
             {
-
-                selected.Add(item, fruits[item]);
+                //selected.Add(item, fruits[item]);
+                Session[item.Value] = "cena";
             }
+        }
 
         lista.DataSource = selected;
         lista.DataBind();
