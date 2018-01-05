@@ -10,10 +10,19 @@ public partial class Summary : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (((Hashtable)Session["basket"]).Count != 0)
+        Hashtable basket = ((Hashtable)Session["basket"]);
+        if (basket != null && basket.Count != 0)
         {
-            foreach (string keyName in ((Hashtable)Session["basket"]).Keys)
-                selected.Items.Add(keyName + " " + ((Hashtable)Session["basket"])[keyName]);
+            int sum = 0;
+            int cur_price = 0;
+            
+            foreach (string keyName in basket.Keys)
+            {
+                cur_price = (int)basket[keyName];
+                selected.Items.Add(keyName + " " + cur_price);
+                sum += cur_price;
+            }
+            price.Text = "Łączna cena produktów: " + sum.ToString();
         }
         else
         {
@@ -23,4 +32,6 @@ public partial class Summary : System.Web.UI.Page
 
 
     }
+
+
 }

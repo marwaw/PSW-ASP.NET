@@ -12,9 +12,17 @@
             <p>
                 <asp:ListBox ID="selected" runat="server" Width="200px" Height="100px" ></asp:ListBox>
             </p>
+
             <p>
                 <asp:Label ID="isempty" runat ="server"></asp:Label>
             </p>
+
+            <p>
+                <asp:Label ID="price" runat ="server"></asp:Label>
+            </p>
+
+            <p><asp:HyperLink ID="link" runat="server" Text="Przejdź do produktów" NavigateUrl="Products.aspx"></asp:HyperLink></p>
+
         </div>
     </form>
 </body>

@@ -23,12 +23,17 @@ public partial class Products : System.Web.UI.Page
         FillLists();
         if (!IsPostBack)
         {
-            Session["basket"] = new Hashtable();
+            if (Session["basket"] == null)
+            {
+                Session["basket"] = new Hashtable();
+            }
+            
             SetCategoriesList();
             SetProductsList(fruits, fruits_list);
             SetProductsList(wegetables, wegetables_list);
             SetProductsList(others, others_list);
         }
+
         basket = (Hashtable) Session["basket"];
         number_of_products.Text = basket.Count.ToString();
 
@@ -58,6 +63,16 @@ public partial class Products : System.Web.UI.Page
                 others_list.Visible = true;
                 curent = others_list;
             }
+
+            
+        }
+        if (curent != null)
+        {
+            buy_button.Visible = true;
+        }
+        else
+        {
+            buy_button.Visible = false;
         }
     }
 
@@ -75,11 +90,8 @@ public partial class Products : System.Web.UI.Page
         foreach (DictionaryEntry pair in hashtable)
         {
             chb_list.Items.Add(pair.Key.ToString());
-            //list.Add(pair.Key.ToString() + " " + pair.Value.ToString());
         }
-
-        //chb_list.DataSource = hashtable;
-        //chb_list.DataBind();
+        
         chb_list.Visible = false;
 
         foreach (ListItem item in chb_list.Items)
@@ -121,7 +133,6 @@ public partial class Products : System.Web.UI.Page
         {
             if (item.Selected)
             {
-                //selected.Add(item, fruits[item]);
                 int price = 0;
 
                 if (category_list.SelectedValue.ToString() == "owoce")
@@ -151,5 +162,6 @@ public partial class Products : System.Web.UI.Page
     {
         Session["basket"] = new Hashtable();
         number_of_products.Text = basket.Count.ToString();
+        
     }
 }
