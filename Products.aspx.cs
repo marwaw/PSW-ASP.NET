@@ -23,11 +23,11 @@ public partial class Products : System.Web.UI.Page
         number_of_products.Text = "4";//tmp  
                                       // number_of_products.Text = basket.Count.ToString();
 
-        if (!IsPostBack)
-        {
+        //if (!IsPostBack)
+        //{
             FillLists();
             SetCategoriesList();
-        }
+        //}
 
 
         if (category_list.SelectedItem != null)
@@ -74,7 +74,6 @@ public partial class Products : System.Web.UI.Page
         foreach (DictionaryEntry pair in hashtable)
         {
             chb_list.Items.Add(pair.Key.ToString());
-            
             //list.Add(pair.Key.ToString() + " " + pair.Value.ToString());
         }
 
@@ -122,7 +121,22 @@ public partial class Products : System.Web.UI.Page
             if (item.Selected)
             {
                 //selected.Add(item, fruits[item]);
-                Session[item.Value] = "cena";
+                int price = 0;
+
+                if (category_list.SelectedValue.ToString() == "owoce")
+                {
+                    price = (int)fruits[item.Value];
+                }
+                else if (category_list.SelectedValue.ToString() == "warzywa")
+                {
+                    price = (int)wegetables[item.Value];
+                }
+                else if (category_list.SelectedValue.ToString() == "inne")
+                {
+                    price = (int)others[item.Value];
+                }
+
+                Session[item.Value] = price;
             }
         }
 
