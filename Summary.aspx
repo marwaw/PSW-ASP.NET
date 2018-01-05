@@ -12,6 +12,9 @@
             <p>
                 <asp:ListBox ID="selected" runat="server" Width="200px" Height="100px" ></asp:ListBox>
             </p>
+            <p>
+                <asp:Label ID="isempty" runat ="server"></asp:Label>
+            </p>
         </div>
     </form>
 </body>

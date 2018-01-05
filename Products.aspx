@@ -35,7 +35,7 @@
 
             <p><asp:CheckBoxList ID="lista" runat="server" ></asp:CheckBoxList></p>
 
-           
+           <p><asp:Button ID="clear" Text="Wyczyść koszyk" runat="server" OnClick="clear_Click" /></p>
 
         </div>
     </form>

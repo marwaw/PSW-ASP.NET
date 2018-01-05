@@ -146,4 +146,10 @@ public partial class Products : System.Web.UI.Page
         lista.DataBind();
         lista.Visible = true;
     }
+
+    protected void clear_Click(object sender, EventArgs e)
+    {
+        Session["basket"] = new Hashtable();
+        number_of_products.Text = basket.Count.ToString();
+    }
 }
