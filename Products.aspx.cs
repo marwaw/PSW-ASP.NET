@@ -160,7 +160,7 @@ public partial class Products : System.Web.UI.Page
     protected void clear_Click(object sender, EventArgs e)
     {
         Session["basket"] = new Hashtable();
+        basket = (Hashtable)Session["basket"];
         number_of_products.Text = basket.Count.ToString();
-        
     }
 }

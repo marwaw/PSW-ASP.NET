@@ -5,10 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-     <form id="form1" runat="server">
-        <div>
+     <form id="form1" runat="server" class="nowyStyl1">
+        <div class="nowyStyl1">
 
             <asp:RadioButtonList ID="category_list" runat="server"  AutoPostBack="True"> </asp:RadioButtonList>
 
@@ -35,7 +36,7 @@
 
             <p><asp:CheckBoxList ID="lista" runat="server" ></asp:CheckBoxList></p>
 
-           <p><asp:Button ID="clear" Text="Wyczyść koszyk" runat="server" OnClick="clear_Click" /></p>
+           <p><asp:Button ID="clear" Text="Wyczyść koszyk" runat="server" OnClick="clear_Click" AutoPostBack = "true" /></p>
 
         </div>
     </form>
