@@ -111,9 +111,8 @@ public partial class Summary : System.Web.UI.Page
 
         summary.Text = "Łączna wartość zamówienia: " + deliv_price.ToString();
 
-        Session["delivery"] = (int)delivery[delivery_list.SelectedValue]; //Zapisuje cene dostawy do sesji zeby potem bylo mozna odczytac w nast stronie
-                                                                            // mam nadzieje ze tak sie zapisze, nie testowalam
-
+        Session["price"] = deliv_price; //Zapisuje cene  do sesji zeby potem bylo mozna odczytac w nast stronie
+                                          
     }
 
 
