@@ -39,6 +39,9 @@
                 <asp:Label ID="summary" runat ="server"></asp:Label>
             </p>
 
+            <p><asp:Button ID="order_button" Text="Złóż zamówienie" runat="server"  OnClick="Order_button_Click"/></p>
+
+
             <p><asp:HyperLink ID="link" runat="server" Text="Przejdź do produktów" NavigateUrl="Products.aspx"></asp:HyperLink></p>
 
         </div>

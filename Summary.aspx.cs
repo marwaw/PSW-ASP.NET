@@ -31,7 +31,7 @@ public partial class Summary : System.Web.UI.Page
                 foreach (string keyName in basket.Keys)
                 {
                     selected.Items.Add(keyName + " " + (int)basket[keyName]);
-                    
+
                 }
             }
             else
@@ -44,6 +44,33 @@ public partial class Summary : System.Web.UI.Page
 
         basket = ((Hashtable)Session["basket"]);
         CountPrice(basket);
+
+        SetVisibility(basket.Count);//jak koszyk pusty to nie widać dostawy, płatności, ceny itp...
+    }
+
+    private void SetVisibility(int amount)
+    {
+        if (amount != 0)
+        {
+            order_button.Visible = true;
+            delivery_list.Visible = true;
+            payment_list.Visible = true;
+            price.Visible = true;
+            summary.Visible = true;
+            payment_label.Visible = true;
+            delivery_label.Visible = true;
+
+        }
+        else
+        {
+            order_button.Visible = false;
+            delivery_list.Visible = false;
+            payment_list.Visible = false;
+            price.Visible = false;
+            summary.Visible = false;
+            payment_label.Visible = false;
+            delivery_label.Visible = false;
+        }
     }
 
     private void FillList()
@@ -83,7 +110,16 @@ public partial class Summary : System.Web.UI.Page
         deliv_price += (int)delivery[delivery_list.SelectedValue];
 
         summary.Text = "Łączna wartość zamówienia: " + deliv_price.ToString();
+
+        Session["delivery"] = (int)delivery[delivery_list.SelectedValue]; //Zapisuje cene dostawy do sesji zeby potem bylo mozna odczytac w nast stronie
+                                                                            // mam nadzieje ze tak sie zapisze, nie testowalam
+
     }
 
 
+
+    protected void Order_button_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Order.aspx");
+    }
 }
