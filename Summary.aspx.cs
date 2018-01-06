@@ -12,6 +12,7 @@ public partial class Summary : System.Web.UI.Page
     Hashtable delivery;
     List<string> payment;
     Hashtable basket;
+    int cost = 0;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -43,7 +44,8 @@ public partial class Summary : System.Web.UI.Page
         }
 
         basket = ((Hashtable)Session["basket"]);
-        CountPrice(basket);
+        cost = CountPrice(basket);
+        summary.Text = "Łączna wartość zamówienia: " + cost.ToString();
 
         SetVisibility(basket.Count);//jak koszyk pusty to nie widać dostawy, płatności, ceny itp...
     }
@@ -94,31 +96,41 @@ public partial class Summary : System.Web.UI.Page
         }
     }
 
-    private void CountPrice(Hashtable basket)
+    private int CountPrice(Hashtable basket)
     {
+        int products_price = 0;
         int sum = 0;
         int cur_price = 0;
 
         foreach (string keyName in basket.Keys)
         {
             cur_price = (int)basket[keyName];
-            sum += cur_price;
+            products_price += cur_price;
         }
-        price.Text = "Łączna cena produktów: " + sum.ToString();
+        price.Text = "Łączna cena produktów: " + products_price.ToString();
 
-        int deliv_price = sum;
-        deliv_price += (int)delivery[delivery_list.SelectedValue];
+        sum = products_price;
+        sum += (int)delivery[delivery_list.SelectedValue];
 
-        summary.Text = "Łączna wartość zamówienia: " + deliv_price.ToString();
+        return sum;
+                                 
+    }
 
-        Session["price"] = deliv_price; //Zapisuje cene  do sesji zeby potem bylo mozna odczytac w nast stronie
-                                          
+    private string Get_Selected(RadioButtonList rbl)
+    {
+        return rbl.SelectedValue;
     }
 
 
 
     protected void Order_button_Click(object sender, EventArgs e)
     {
+        Hashtable order_details = new Hashtable();
+        order_details.Add("cost", cost);
+        order_details.Add("delivery", Get_Selected(delivery_list));
+        order_details.Add("payment", Get_Selected(payment_list));
+
+        Session["order_details"] = order_details; //Zapisuje cene  do sesji zeby potem bylo mozna odczytac w nast stronie
         Response.Redirect("Order.aspx");
     }
 }

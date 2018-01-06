@@ -9,7 +9,16 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <p><asp:Label  ID="price_label" runat="server"></asp:Label></p>
+            <p><asp:Label ID ="thanks_text" runat ="server"></asp:Label></p>
+
+            <p><asp:Label ID ="price_label" runat ="server"></asp:Label></p>
+
+            <p><asp:Label  ID="delivery_label" runat="server"></asp:Label></p>
+
+            <p><asp:Label ID ="payment_label" runat ="server"></asp:Label></p>
+
+            <p><asp:HyperLink ID="link" runat="server" Text="Przejdź do listy produktów" NavigateUrl="Products.aspx"></asp:HyperLink></p>
+            
         </div>
     </form>
 </body>
