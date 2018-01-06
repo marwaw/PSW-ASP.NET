@@ -15,5 +15,13 @@ public partial class Order : System.Web.UI.Page
         price_label.Text = "Całkowita wartość zamówienia: " + ((Hashtable)Session["order_details"])["cost"].ToString();
         delivery_label.Text = "Wybrany sposób dostawy: " + ((Hashtable)Session["order_details"])["delivery"].ToString();
         payment_label.Text = "Wybrany sposób płatności: " + ((Hashtable)Session["order_details"])["payment"].ToString();
+
+        Clear_Session();
+    }
+
+    private void Clear_Session()
+    {
+        Session["basket"] = null;
+        Session["order_details"] = null;
     }
 }
