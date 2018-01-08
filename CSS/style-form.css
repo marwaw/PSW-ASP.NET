@@ -1,4 +1,6 @@
 header h1 {
+    background-image: url(../images/main_photo.jpg);
+    background-position: 100% center;
     background-color: hsla(330, 42%, 50%, 0.50);
 }
 
